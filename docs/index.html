@@ -1,1 +1,42 @@
 
+<html>
+  <head>
+    <title>Progetto di sviluppo in team: servizio di musica in streaming</title>
+  </head>
+  <body>
+    <h1>Progetto di sviluppo in team</h1>
+    <h2>Servizio di musica in streaming</h2>
+    <p>
+    Un servizio di musica in streaming permette agli utenti registrati di ascoltare una serie di brani di vari artisti (che possono essere artisti singoli o gruppi). 
+    Ogni artista è associato a una serie di tag (che possono rappresentare il genere o altre classificazioni tipo "per studiare" o "grandi classici") che possono essere aggiunte dagli stessi utenti.
+    Il servizio utilizza le tag per consigliare agli utenti altri artisti collegati ai propri ascolti.
+    Un artista può essere collegato gli altri artisti anche senza che abbiano tag in comune, semplicemente perchè hanno collaborato o hanno suonato nella stessa band o anche perché un "artista" è in realtà una band e gli artisti collegati sono i membri di qella band.
+    Ogni utente può creare delle playlist che possono essere private o pubbliche.
+    Un utente può "seguire" un altro utente per ricevere notifiche ogni volta che pubblica o modifica una playlist.
+    Allo stesso modo, un utente può seguire un artista per essere notificato dei nuovi brani pubblicati. 
+    Gli utenti possono aggiungere i brani a una lista di brani preferiti.
+    Ogni brano è associato a una valutazione, che dipende dal numero di utenti che hanno inserito il brano tra i propri preferiti.
+    Per riprodurre la musica, l'applicazione deve conoscere il nome del file audio corrispondente ad ogni brano.
+    </p>
+    <h2>Il database</h2>
+    <p>Utente (<u><b>email</b></u>, password)<br/>
+UtentiSeguiti (<u><b>id</b></u>,<i>seguito</i>,<i>follower</i>)<br/>
+Playlist(<u><b>id</b></u>, nome, pubblica, <i>proprietario</i>)<br/>
+Brani(<u><b>file</b></u>, titolo, data, <i>artista</i>)<br/>
+BraniPlaylist(<u><b>id</b></u>, <i>brano</i>,<i>playlist</i>)<br/>
+Preferiti(<u><b>id</b></u>, <i>utente</i>,<i>brano</i>)<br/>
+Artisti(<u><b>nome</b></u>, biografia, gruppo)<br/>
+Tag (<u><b>tag</b></u>)<br/>
+TagArtista(<u><b>id</b></u>, <i>artista</i>,<i>tag</i>)<br/>
+ArtistiCollegati(<u><b>id</b></u>, <i>artista</i>,<i>artista_collegato</i>)</p>
+<p><b>utente_seguito</b> è chiave esterna di <b>Utenti</b> in <b>UtentiSeguiti</b> e <b>Preferiti</b>.<br/>
+<b>follower</b> è chiave esterna di <b>Utenti</b> in <b>UtentiSeguiti</b>.<br/>
+<b>proprietario</b> è chiave esterna di <b>Utenti</b> in <b>Playlist</b>.<br/>
+<b>artista</b> è chiave esterna di <b>Artisti</b> in <b>Brani</b>, <b>TagArtista</b> e <b>ArtistiCollegati</b>.<br/>
+<b>brano</b> è chiave esterna di <b>Brani</b> in <b>Playlist</b> e <b>Preferiti</b>.<br/>
+<b>playlist</b> è chiave esterna di <b>Playlist</b> in <b>BraniPlaylist</b>.<br/>
+<b>tag</b> è chiave esterna di <b>Tag</b> in <b>TagArtisti</b>.<br/>
+<b>artista_collegato</b> è chiave esterna di <b>Artisti</b> in <b>ArtistiCollegati</b>. 
+</p>
+<p>L’attributo <i>pubblica</i> in <i>Playlist</i> è un <b>boolean</b> che vale <i>true</i> se la playlist è pubblica, <i>false</i> se è privata.</p>
+<p>L’attributo <i>gruppo</i> in <i>Artisti</i> è un <b>boolean</b> che vale <i>true</i> se l’artista è un gruppo, <i>false</i> se è un singolo.</p>
