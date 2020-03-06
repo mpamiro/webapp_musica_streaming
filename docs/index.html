@@ -19,26 +19,24 @@
     Per riprodurre la musica, l'applicazione deve conoscere il nome del file audio corrispondente ad ogni brano.<br>
     </p>
     <h2>Il database</h2>
-    <p>Utente (<u><b>email</b></u>, password)</p><p>
-UtentiSeguiti (<u><b>id</b></u>,<i>seguito</i>,<i>follower</i>)</p><p>
-Playlist(<u><b>id</b></u>, nome, pubblica, <i>proprietario</i>)</p><p>
-Brani(<u><b>file</b></u>, titolo, data, <i>artista</i>)</p><p>
-BraniPlaylist(<u><b>id</b></u>, <i>brano</i>,<i>playlist</i>)</p><p>
-Preferiti(<u><b>id</b></u>, <i>utente</i>,<i>brano</i>)</p><p>
-Artisti(<u><b>nome</b></u>, biografia, gruppo)</p><p>
-Tag (<u><b>tag</b></u>)</p><p>
-TagArtista(<u><b>id</b></u>, <i>artista</i>,<i>tag</i>)</p><p>
+    <p>Utente (<u><b>email</b></u>, password)<br/>
+UtentiSeguiti (<u><b>id</b></u>,<i>seguito</i>,<i>follower</i>)<br/>
+Playlist(<u><b>id</b></u>, nome, pubblica, <i>proprietario</i>)<br/>
+Brani(<u><b>file</b></u>, titolo, data, <i>artista</i>)<br/>
+BraniPlaylist(<u><b>id</b></u>, <i>brano</i>,<i>playlist</i>)<br/>
+Preferiti(<u><b>id</b></u>, <i>utente</i>,<i>brano</i>)<br/>
+Artisti(<u><b>nome</b></u>, biografia, gruppo)<br/>
+Tag (<u><b>tag</b></u>)<br/>
+TagArtista(<u><b>id</b></u>, <i>artista</i>,<i>tag</i>)<br/>
 ArtistiCollegati(<u><b>id</b></u>, <i>artista</i>,<i>artista_collegato</i>)</p>
-<p></p>
-<p><b>utente_seguito</b> è chiave esterna di <b>Utenti</b> in <b>UtentiSeguiti</b> e <b>Preferiti</b>.</p><p>
-<b>follower</b> è chiave esterna di <b>Utenti</b> in <b>UtentiSeguiti</b>.</p><p>
-<b>proprietario</b> è chiave esterna di <b>Utenti</b> in <b>Playlist</b>.</p><p>
-<b>artista</b> è chiave esterna di <b>Artisti</b> in <b>Brani</b>, <b>TagArtista</b> e <b>ArtistiCollegati</b>.</p><p>
-<b>brano</b> è chiave esterna di <b>Brani</b> in <b>Playlist</b> e <b>Preferiti</b>.</p><p>
-<b>playlist</b> è chiave esterna di <b>Playlist</b> in <b>BraniPlaylist</b>.</p><p>
-<b>tag</b> è chiave esterna di <b>Tag</b> in <b>TagArtisti</b>.</p><p>
+<p><b>utente_seguito</b> è chiave esterna di <b>Utenti</b> in <b>UtentiSeguiti</b> e <b>Preferiti</b>.<br/>
+<b>follower</b> è chiave esterna di <b>Utenti</b> in <b>UtentiSeguiti</b>.<br/>
+<b>proprietario</b> è chiave esterna di <b>Utenti</b> in <b>Playlist</b>.<br/>
+<b>artista</b> è chiave esterna di <b>Artisti</b> in <b>Brani</b>, <b>TagArtista</b> e <b>ArtistiCollegati</b>.<br/>
+<b>brano</b> è chiave esterna di <b>Brani</b> in <b>Playlist</b> e <b>Preferiti</b>.<br/>
+<b>playlist</b> è chiave esterna di <b>Playlist</b> in <b>BraniPlaylist</b>.<br/>
+<b>tag</b> è chiave esterna di <b>Tag</b> in <b>TagArtisti</b>.<br/>
 <b>artista_collegato</b> è chiave esterna di <b>Artisti</b> in <b>ArtistiCollegati</b>. 
 </p>
-<p></p>
-<p>L’attributo <i>pubblica</i> in <i>Playlist</i> è un <b>boolean</b> che vale <i>true</i> se la playlist è pubblica, <i>false</i> se è privata.</p><p>
+<p>L’attributo <i>pubblica</i> in <i>Playlist</i> è un <b>boolean</b> che vale <i>true</i> se la playlist è pubblica, <i>false</i> se è privata.<br>
 L’attributo <i>gruppo</i> in <i>Artisti</i> è un <b>boolean</b> che vale <i>true</i> se l’artista è un gruppo, <i>false</i> se è un singolo.</p>
